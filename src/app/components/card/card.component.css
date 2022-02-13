@@ -1,0 +1,15 @@
+.card {
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.name {
+    font-family: 'Rowdies', cursive;
+    font-size: x-large;
+}
+
+.apodo {
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 4px;
+}
+

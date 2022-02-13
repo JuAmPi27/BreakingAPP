@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Breaking-Bad<span class="text-danger">APP</span></h1>
+    <h1>Breaking-Bad<span class="text-warning">APP</span></h1>
     <hr>
     <input 
         type="text"
@@ -10,7 +10,7 @@
 
     <div class="row">
         <div *ngFor="let personaje of personajes" class="col-xl-4 col-sm-6 col-xs-12">
-            
+            <app-card [personaje]="personaje"></app-card>
         </div>
     </div>
 

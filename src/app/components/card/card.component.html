@@ -1,1 +1,22 @@
-<p>card works!</p>
+<div class="card mt-4">
+    <img src="{{ personaje.img }}" class="card-img-top" alt="{{ personaje.name }}">
+    <div class="card-body">
+        <span class="btn btn-sm float-end" [ngClass]="{
+            'btn-success text-dark': personaje.status.toLowerCase().includes('alive'),
+            'btn-danger text-dark': personaje.status.toLowerCase().includes('deceased'),
+            'btn-info text-dark': personaje.status.toLowerCase().includes('presumed dead')
+        }">
+            {{ personaje.status }}
+        </span>
+      <h5 class="name card-title">{{ personaje.name }}</h5>
+      <p class="apodo text-dark ms-3">{{ personaje.nickname }}</p>
+        <hr>
+      <div class="row text-left">
+          <p class="text-decoration-underline">Occupation:</p>
+          <div *ngFor="let o of personaje.occupation">
+            <strong>&bull; {{ o }}</strong> <!--.....leer+ sobre que hace el "&bull;".......-->
+          </div>
+      </div>
+    </div>
+  </div>
+

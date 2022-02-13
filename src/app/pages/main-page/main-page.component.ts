@@ -11,8 +11,8 @@ import { Personaje } from 'src/app/interfaces/Personaje';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
-  personajes: Personaje[] | undefined;
-  personajesopy: Personaje[] | undefined;
+  personajes!: Personaje[];
+  personajesCopy!: Personaje[];
 
 
   constructor(public http: HttpClient) { 
@@ -33,14 +33,17 @@ export class MainPageComponent {
          occupation: occupation,
       };
       });
-      this.personajesopy = this.personajes;
+      this.personajesCopy = this.personajes;
     });
   }
 
   filter(e: any) {
     const search: string = e.target.value;
-    console.log({ search }); // las llaves van para poder ver bien el valor de la variable....
-    // TODO : hacer el filter
+    // console.log({ search }); ........// las llaves van para poder ver bien el valor de la variable....
+    
+    this.personajes = this.personajesCopy?.filter(({ name }: Personaje) => {
+      return name.toLowerCase().includes(search.toLowerCase());
+    })
   }
 
 
