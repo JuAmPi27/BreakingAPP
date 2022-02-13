@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Breaking-Bad<span class="text-danger">APP</span></h1>
+    <hr>
+    <input 
+        type="text"
+        class="form-control"
+        placeholder="Buscar personaje..."
+        (input)="filter($event)"
+    >
+
+    <div class="row">
+        <div *ngFor="let personaje of personajes" class="col-xl-4 col-sm-6 col-xs-12">
+            
+        </div>
+    </div>
+
+</div>
